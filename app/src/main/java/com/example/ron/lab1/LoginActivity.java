@@ -1,29 +1,79 @@
 package com.example.ron.lab1;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
+
+    protected static final String ACTIVITY_NAME = "Login Activity";
+
+    EditText loginEmail;
+    TextView loginText;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Log.i(ACTIVITY_NAME,"In onCreate()");
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Log.i(ACTIVITY_NAME,"In onResume()");
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        Log.i(ACTIVITY_NAME,"In onStart()");
+        Button loginButton = (Button) findViewById(R.id.button2);
+        final SharedPreferences sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE);
+        loginText = (TextView) findViewById(R.id.editText);
+        loginText.setText(sharedPreferences.getString("DefaultEmail","email@domain.com"));
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onClick(View v) {
+                loginEmail = (EditText) findViewById(R.id.editText);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("DefaultEmail",loginEmail.getText().toString());
+                editor.commit();
+                Intent intent = new Intent(LoginActivity.this,StartActivity.class);
+                startActivity(intent);
+
             }
         });
+
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.i(ACTIVITY_NAME,"In onPause()");
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        Log.i(ACTIVITY_NAME,"In onStop()");
+    }
+
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        Log.i(ACTIVITY_NAME,"In onDestroy()");
     }
 
 }
