@@ -4,8 +4,11 @@
     <string name="ButtonText">I\’m a button</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="login">Login</string>
+    <string name="email">Email</string>
     <string name="title_activity_list_items">ListItemsActivity</string>
     <string name="radio_button">Button 1</string>
     <string name="check_box">Button 2</string>
     <string name="switch_button">Enable Something</string>
+    <string name="startChatButton">Start Chat</string>
+    <string name="sendButton">Send</string>
 </resources>

@@ -7,4 +7,6 @@
     <string name="radio_button">Bouton 1</string>
     <string name="check_box">Bouton 2</string>
     <string name="switch_button">Permettre à quelque chose</string>
+    <string name="startChatButton">démarrer la discussion</string>
+    <string name="sendButton">envoyer</string>
 </resources>
