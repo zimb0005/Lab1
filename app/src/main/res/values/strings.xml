@@ -11,4 +11,7 @@
     <string name="switch_button">Enable Something</string>
     <string name="startChatButton">Start Chat</string>
     <string name="sendButton">Send</string>
+    <string name="weatherForecast">Weather Forecast</string>
+    <string name="title_message_list">Messages</string>
+    <string name="title_message_detail">Message Detail</string>
 </resources>

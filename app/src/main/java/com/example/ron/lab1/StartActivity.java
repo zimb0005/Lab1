@@ -34,10 +34,21 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i(ACTIVITY_NAME,"User clicked start chat");
-                Intent intent = new Intent (StartActivity.this,ChatWindow.class);
+                Intent intent = new Intent (StartActivity.this,MessageListActivity.class);
                 startActivity(intent);
             }
         });
+
+        Button weatherForecast = (Button) findViewById(R.id.weatherForecast);
+        weatherForecast.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent (StartActivity.this,WeatherForecast.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     @Override

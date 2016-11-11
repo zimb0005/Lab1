@@ -32,4 +32,12 @@
         android:layout_alignParentStart="true"
         android:layout_marginTop="44dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weatherForecast"
+        android:id="@+id/weatherForecast"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>
